@@ -3,8 +3,11 @@
 #include <map>
 #include <memory>
 #include "GameObject.hpp"
+
 namespace KudoEngine
 {
+	class Engine;
+
 	class GameObjectManager
 	{
 
@@ -17,13 +20,9 @@ namespace KudoEngine
 
 			return &_gameObjects;
 		};
-
 	private:
 		std::map<int, std::unique_ptr<GameObject>> _gameObjects;
 	};
 
-	/*GameObjectManager& G_GameObjectManager()
-	{
-		return Engine::Instance().GetGameObjectManager();
-	}*/
+	GameObjectManager& G_GameObjectManager();
 }

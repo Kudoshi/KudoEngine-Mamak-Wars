@@ -9,11 +9,12 @@ namespace KudoEngine
         // Main game loop
         while (!WindowShouldClose())    // Detect window close button or ESC key
         {
+            Awake();
             Start();
-            // Call Start
 
+            Update();
 
-            OnRender();
+            Render();
         }
 
         // De-Initialization
@@ -22,6 +23,18 @@ namespace KudoEngine
         //--------------------------------------------------------------------------------------
 
 	}
+
+    void LifecycleManager::Awake()
+    {
+        std::map<int, std::unique_ptr<GameObject>>* objects = G_GameObjectManager().GetGameObjects();
+        
+        if (objects->empty()) return;
+
+        for (auto& obj : *objects)
+        {
+            obj.second.get()->InternalAwake();
+        }
+    }
 
     void LifecycleManager::Start()
     {
@@ -35,13 +48,31 @@ namespace KudoEngine
         }
     }
 
-    void LifecycleManager::OnRender()
+    void LifecycleManager::Update()
+    {
+        std::map<int, std::unique_ptr<GameObject>>* objects = Engine::Instance().GetGameObjectManager().GetGameObjects();
+
+        if (objects->empty()) return;
+
+        for (auto& obj : *objects)
+        {
+            obj.second.get()->InternalUpdate();
+        }
+    }
+    
+    void LifecycleManager::Render()
     {
         BeginDrawing();
+        ClearBackground(BLACK);
 
-            ClearBackground(BLACK);
+        std::map<int, std::unique_ptr<GameObject>>* objects = Engine::Instance().GetGameObjectManager().GetGameObjects();
 
-            DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+        if (objects->empty()) return;
+
+        for (auto& obj : *objects)
+        {
+            obj.second.get()->InternalRender();
+        }
 
         EndDrawing();
     }

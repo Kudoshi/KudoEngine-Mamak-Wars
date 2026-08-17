@@ -4,20 +4,27 @@ using namespace KudoEngine;
 
 namespace Game
 {
-	class TestObject : public Behaviour
+	class TestObject : public Component
 	{
 		void Awake() override {
+			Print("[Debug] AWAKE test object");
 
 		}
 
 		void Start() override
 		{
-			std::cout << "[Debug] Hello World\n";
+			Print("[Debug] Start test object");
 		}
 
 		void Update() override
 		{
+			Print("[Debug] update!");
 
+		}
+
+		void Render() override
+		{
+			Print("[Debug] Rendering!");
 		}
 	};
 }

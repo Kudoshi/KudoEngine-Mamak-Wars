@@ -7,8 +7,9 @@
 #include "GameObject.hpp"
 #include "Game.hpp"
 #include <memory>
-#include "Behaviour.hpp"
+#include "Component.hpp"
 #include <vector>
+#include "Print.hpp"
 
 using namespace std;
 

@@ -1,7 +1,13 @@
 #include "GameObjectManager.hpp"
+#include "Engine.hpp"
 
 namespace KudoEngine
 {
+	GameObjectManager& G_GameObjectManager()
+	{
+		return Engine::Instance().GetGameObjectManager();
+	}
+
 	GameObject& GameObjectManager::CreateGameObject()
 	{
 		auto object = std::make_unique<GameObject>();
@@ -14,5 +20,8 @@ namespace KudoEngine
 
 		return ref;
 	}
+
+
+
 
 }
