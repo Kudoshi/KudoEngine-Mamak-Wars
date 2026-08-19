@@ -132,6 +132,7 @@
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="LifecycleManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SpriteRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.hpp" />
@@ -141,6 +142,8 @@
     <ClInclude Include="GameObjectManager.hpp" />
     <ClInclude Include="LifecycleManager.hpp" />
     <ClInclude Include="Print.hpp" />
+    <ClInclude Include="Shape2D.hpp" />
+    <ClInclude Include="SpriteRenderer.hpp" />
     <ClInclude Include="TestObject.hpp" />
     <ClInclude Include="Transform.hpp" />
   </ItemGroup>

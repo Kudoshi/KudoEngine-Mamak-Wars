@@ -6,6 +6,9 @@ namespace Game
 {
 	class TestObject : public Component
 	{
+	public:
+		TestObject(GameObject& gameObject) : Component(gameObject) {}
+
 		void Awake() override {
 			Print("[Debug] AWAKE test object");
 

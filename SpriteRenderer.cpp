@@ -1,0 +1,57 @@
+#include "Transform.hpp"
+#include "SpriteRenderer.hpp"
+#include "raylib.h"
+#include "raymath.h"
+
+namespace KudoEngine
+{
+
+	void SpriteRenderer::Render() 
+	{
+		Vector2 position = GetTransform().GetPosition();
+		Vector2 scale = GetTransform().GetScale() * 100; // We doing 1 unit = 100
+		float rotation = GetTransform().GetRotation();
+
+		if (_shapeSprite == Shape2D::Sprite && _texture2D.id != 0)
+		{
+			Rectangle rectSrc = { 0, 0, (float) _texture2D.width, (float)_texture2D.height };
+			Rectangle rectDestination = { position.x, position.y, scale.x, scale.y };
+			Vector2 origin = { scale.x / 2.0f, scale.y / 2.0f };
+
+			DrawTexturePro(_texture2D, rectSrc, rectDestination, origin, rotation, _spriteColor);
+		}
+		else if (_shapeSprite == Shape2D::Circle)
+		{
+			float radius = scale.x / 2.0f;
+			DrawCircle(position.x, position.y, radius, _spriteColor);
+		}
+		else if (_shapeSprite == Shape2D::Rectangle)
+		{
+			Rectangle rect = { position.x, position.y, scale.x, scale.y };
+			DrawRectanglePro(rect, position, rotation, _spriteColor);
+		}
+		else if (_shapeSprite == Shape2D::Triangle)
+		{
+			float halfWidth = scale.x / 2.0f;
+			float halfHeight = scale.y / 2.0f;
+
+			Vector2 points[] =
+			{
+				{ 0, -halfHeight },
+				{ -halfWidth, halfHeight },
+				{ halfWidth, halfHeight }
+			};
+
+			for (Vector2& point : points)
+			{
+				point = Vector2Rotate(point, rotation * DEG2RAD);
+				point.x += position.x;
+				point.y += position.y;
+			}
+
+			DrawTriangle(points[0], points[1], points[2], RED);
+		}
+	}
+
+
+}

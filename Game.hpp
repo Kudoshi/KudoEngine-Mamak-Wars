@@ -5,5 +5,6 @@ namespace Game
 	{
 	public:
 		void SetupGame();
+		void SetupScene();
 	};
 }

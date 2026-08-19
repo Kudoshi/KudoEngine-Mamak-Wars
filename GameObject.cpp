@@ -1,5 +1,5 @@
 #include "GameObjectManager.hpp"
-#include "Transform.hpp";
+#include "Transform.hpp"
 
 namespace KudoEngine
 {
@@ -31,7 +31,7 @@ namespace KudoEngine
 	{
 		for (auto behaviour = _awakeComponents.begin(); behaviour != _awakeComponents.end(); )
 		{
-			(*behaviour)->Awake();
+			(*behaviour)->InternalAwake();
 
 			_startComponents.push_back(*behaviour);
 			behaviour = _awakeComponents.erase(behaviour);
@@ -50,7 +50,7 @@ namespace KudoEngine
 				continue;
 			}
 
-			(*behaviour)->Start();
+			(*behaviour)->InternalStart();
 
 			behaviour = _startComponents.erase(behaviour);
 		}
@@ -64,7 +64,7 @@ namespace KudoEngine
 		{
 			if (!behaviour.get()->IsEnabled()) continue;
 
-			behaviour.get()->Update();
+			behaviour.get()->InternalUpdate();
 		}
 	}
 
@@ -76,7 +76,7 @@ namespace KudoEngine
 		{
 			if (!behaviour.get()->IsEnabled()) continue;
 
-			behaviour.get()->Render();
+			behaviour.get()->InternalRender();
 		}
 	}
 }

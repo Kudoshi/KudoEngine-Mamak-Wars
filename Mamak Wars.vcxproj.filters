@@ -31,6 +31,9 @@
     <Filter Include="Engine\Source Files\Components">
       <UniqueIdentifier>{303fa24c-0e2a-4093-b458-313db38f7f5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Header Files\Enums">
+      <UniqueIdentifier>{2b9b4979-8d99-4e27-8e6c-b167a62e89ff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -50,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteRenderer.cpp">
+      <Filter>Engine\Source Files\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +84,12 @@
       <Filter>Engine\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Transform.hpp">
+      <Filter>Engine\Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape2D.hpp">
+      <Filter>Engine\Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteRenderer.hpp">
       <Filter>Engine\Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>
