@@ -57,6 +57,9 @@
     <ClCompile Include="SpriteRenderer.cpp">
       <Filter>Engine\Source Files\Components</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerInput..cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.hpp">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="SpriteRenderer.hpp">
       <Filter>Engine\Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInput.hpp">
+      <Filter>Game\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

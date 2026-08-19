@@ -39,12 +39,12 @@ namespace KudoEngine
 			return nullptr;
 		}
 
-		template<typename T>
-		T& AddComponent() {
+		template<typename T, typename... Args>
+		T& AddComponent(Args&&... args) {
 			static_assert(std::is_base_of_v<Component, T>);
-			static_assert(std::is_constructible_v<T, GameObject&>);
+			static_assert(std::is_constructible_v<T, GameObject&, Args...>);
 
-			auto component = std::make_unique<T>(*this);
+			auto component = std::make_unique<T>(*this, std::forward<Args>(args)...);
 			T& ref = *component;
 			Component* rawComponent = component.get();
 

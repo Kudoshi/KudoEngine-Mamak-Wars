@@ -1,6 +1,7 @@
 #include "Engine.hpp"
 #include "TestObject.hpp"
 #include "SpriteRenderer.hpp"
+#include "PlayerInput.hpp"
 using namespace KudoEngine;
 
 namespace Game
@@ -25,5 +26,7 @@ namespace Game
 		spriteRenderer.SetShape(Shape2D::Circle, BLUE);
 
 		testObj.GetTransform().SetPosition({ 100, 100 });
+
+		testObj.AddComponent<PlayerInput>(0);
 	}
 }
