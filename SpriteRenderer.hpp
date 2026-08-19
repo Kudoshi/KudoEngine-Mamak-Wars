@@ -10,7 +10,7 @@ namespace KudoEngine
 	class SpriteRenderer : public Component
 	{
 	public:
-		SpriteRenderer(GameObject& gameObject) : Component(gameObject) {}
+		SpriteRenderer(GameObject& gameObject) : Component(gameObject), _spriteColor(WHITE) {}
 
 		void SetShape(Shape2D shape, Color spriteColor = WHITE) { _shapeSprite = shape; _spriteColor = spriteColor; };
 		void SetSprite(Texture2D texture) {

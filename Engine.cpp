@@ -39,6 +39,7 @@ namespace KudoEngine
 		_game.SetupGame();
 		std::cout << "[Engine] Start Game\n";
 		InitWindow(_config.Width, _config.Height, _config.GameName.c_str());
+		_game.SetupScene();
 		_lifecycleManager.StartLifeCycleManager();
 	}
 }

@@ -9,6 +9,11 @@ namespace Game
 	const float leftStickDeadzoneX = 0.1f;
 	const float leftStickDeadzoneY = 0.1f;
 
+	void PlayerInput::Awake()
+	{
+		_playerMovement = GetGameObject().GetComponent<PlayerMovement>();
+	}
+
 	void PlayerInput::Update()
 	{
 
@@ -24,6 +29,7 @@ namespace Game
 			if (leftStickX > -leftStickDeadzoneX && leftStickX < leftStickDeadzoneX) leftStickX = 0.0f;
 			if (leftStickY > -leftStickDeadzoneY && leftStickY < leftStickDeadzoneY) leftStickY = 0.0f;
 
+			_playerMovement->Move(Vector2({ leftStickX, leftStickY }));
 
 			// -- Buttons
 

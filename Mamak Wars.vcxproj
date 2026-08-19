@@ -133,6 +133,7 @@
     <ClCompile Include="LifecycleManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerInput..cpp" />
+    <ClCompile Include="PlayerMovement.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +144,7 @@
     <ClInclude Include="GameObjectManager.hpp" />
     <ClInclude Include="LifecycleManager.hpp" />
     <ClInclude Include="PlayerInput.hpp" />
+    <ClInclude Include="PlayerMovement.hpp" />
     <ClInclude Include="Print.hpp" />
     <ClInclude Include="Shape2D.hpp" />
     <ClInclude Include="SpriteRenderer.hpp" />

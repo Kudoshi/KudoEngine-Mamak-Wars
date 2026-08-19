@@ -73,6 +73,7 @@ namespace KudoEngine
         {
             obj.second.get()->InternalRender();
         }
+     
 
         EndDrawing();
     }
