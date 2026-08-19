@@ -1,11 +1,12 @@
 #include "GameObjectManager.hpp"
+#include "Transform.hpp";
 
 namespace KudoEngine
 {
 	GameObject::GameObject()
 	{ 
 		_isActive = true;
-
+		AddComponent<Transform>();
 	}
 
 	void GameObject::Awake()

@@ -18,6 +18,8 @@ namespace KudoEngine
 		void InternalUpdate();
 		void InternalRender();
 		bool IsActive() const { return _isActive; };
+		std::vector<std::unique_ptr<Component>>& GetComponents() { return _components; }
+
 
 		template<typename T>
 		T& AddComponent() {

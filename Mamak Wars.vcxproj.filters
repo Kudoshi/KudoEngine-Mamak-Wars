@@ -25,6 +25,12 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Engine\Header Files\Components">
+      <UniqueIdentifier>{4879b8bc-ba64-4197-b543-f05467d05f65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source Files\Components">
+      <UniqueIdentifier>{303fa24c-0e2a-4093-b458-313db38f7f5d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -70,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="Print.hpp">
       <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.hpp">
+      <Filter>Engine\Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

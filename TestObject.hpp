@@ -18,13 +18,13 @@ namespace Game
 
 		void Update() override
 		{
-			Print("[Debug] update!");
+			//Print("[Debug] update!");
 
 		}
 
 		void Render() override
 		{
-			Print("[Debug] Rendering!");
+			//Print("[Debug] Rendering!");
 		}
 	};
 }

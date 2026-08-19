@@ -142,6 +142,7 @@
     <ClInclude Include="LifecycleManager.hpp" />
     <ClInclude Include="Print.hpp" />
     <ClInclude Include="TestObject.hpp" />
+    <ClInclude Include="Transform.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
