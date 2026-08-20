@@ -14,6 +14,7 @@ namespace KudoEngine
 		void InternalStart() { Start(); };
 		void InternalUpdate() { Update(); };
 		void InternalRender() { Render(); };
+		void InternalDestroy() { Destroy(); };
 
 
 		GameObject& GetGameObject() { return _gameObject; };
@@ -31,5 +32,6 @@ namespace KudoEngine
 		virtual void Start() {};
 		virtual void Update() {};
 		virtual void Render() {};
+		virtual void Destroy() {};
 	};
 }

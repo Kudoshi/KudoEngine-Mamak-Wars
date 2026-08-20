@@ -59,6 +59,9 @@
     <ClCompile Include="PlayerMovement.cpp">
       <Filter>Game\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.hpp">
@@ -98,6 +101,12 @@
       <Filter>Game\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovement.hpp">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.hpp">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.hpp">
       <Filter>Game\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

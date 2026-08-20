@@ -1,6 +1,7 @@
 #include "LifecycleManager.hpp"
 #include "Engine.hpp"
 #include "raylib.h"
+#include "CollisionManager.hpp"
 
 namespace KudoEngine
 {
@@ -59,6 +60,11 @@ namespace KudoEngine
             obj.second.get()->InternalUpdate();
         }
     }
+
+    void LifecycleManager::EnginePhysics()
+    {
+        CollisionManager::Instance().InternalPhysicsLoop();
+    }
     
     void LifecycleManager::Render()
     {
@@ -76,5 +82,19 @@ namespace KudoEngine
      
 
         EndDrawing();
+    }
+
+    void LifecycleManager::Destroy()
+    {
+        std::map<int, std::unique_ptr<GameObject>>* objects = Engine::Instance().GetGameObjectManager().GetGameObjects();
+
+        if (objects->empty()) return;
+
+        for (auto& obj : *objects)
+        {
+            obj.second.get()->InternalDestroy();
+        }
+
+
     }
 }

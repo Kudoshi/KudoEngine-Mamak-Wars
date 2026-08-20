@@ -13,7 +13,7 @@ namespace KudoEngine
 
 	public:
 		GameObject& CreateGameObject();
-
+		void DestroyGameObject(GameObject& gameObject);
 	public:
 		std::map<int, std::unique_ptr<GameObject>>* GetGameObjects() {
 			if (_gameObjects.size() == 0) return nullptr;

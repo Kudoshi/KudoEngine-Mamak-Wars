@@ -11,7 +11,7 @@ namespace KudoEngine
 	class GameObject
 	{
 	public:
-		GameObject(); 
+		GameObject(int objectID);
 
 
 	public: 
@@ -19,7 +19,12 @@ namespace KudoEngine
 		void InternalStart();
 		void InternalUpdate();
 		void InternalRender();
+		void InternalDestroy();
 		bool IsActive() const { return _isActive; };
+		int GetObjectID() const { return _objectID; };
+		void DestroySelf() { _setToDestroy = true; };
+
+
 		Transform& GetTransform() { return *static_cast<Transform*>(_components[0].get()); };
 		std::vector<std::unique_ptr<Component>>& GetComponents() { return _components; }
 
@@ -41,8 +46,8 @@ namespace KudoEngine
 
 		template<typename T, typename... Args>
 		T& AddComponent(Args&&... args) {
-			static_assert(std::is_base_of_v<Component, T>);
-			static_assert(std::is_constructible_v<T, GameObject&, Args...>);
+			static_assert(std::is_base_of_v<Component, T>, "T must be derived from KudoEngine::Component");
+			static_assert(std::is_constructible<T, GameObject&, Args...>::value, "T must be constructible from a GameObject& and the supplied arguments");
 
 			auto component = std::make_unique<T>(*this, std::forward<Args>(args)...);
 			T& ref = *component;
@@ -66,12 +71,14 @@ namespace KudoEngine
 		virtual void Start();
 		virtual void Update();
 		virtual void Render();
+		virtual void Destroy();
 
 	private:
+		int _objectID;
 		std::vector<Component*> _awakeComponents;
 		std::vector<Component*> _startComponents;
 		std::vector<std::unique_ptr<Component>> _components;
 		bool _isActive = true;
-
+		bool _setToDestroy = false;
 	};
 }

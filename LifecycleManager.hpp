@@ -11,10 +11,9 @@ namespace KudoEngine
 			void Awake();
 			void Start();
 			void Update();
-			//void LateUpdate();
-			//void OnPreRender();
+			void EnginePhysics();
 			void Render();
-			//void OnPostRender();
+			void Destroy();
 			void OnApplicationQuit();
 			
 	};

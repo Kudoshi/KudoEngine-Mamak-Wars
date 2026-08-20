@@ -1,3 +1,4 @@
+#include "raylib.h"
 #include "Engine.hpp"
 #include "TestObject.hpp"
 #include "SpriteRenderer.hpp"

@@ -1,9 +1,11 @@
 #include "GameObjectManager.hpp"
 #include "Transform.hpp"
+#include "Engine.hpp"
+
 
 namespace KudoEngine
 {
-	GameObject::GameObject()
+	GameObject::GameObject(int objectID) : _objectID(objectID)
 	{ 
 		_isActive = true;
 		AddComponent<Transform>();
@@ -22,6 +24,10 @@ namespace KudoEngine
 	}
 
 	void GameObject::Render()
+	{
+	}
+
+	void GameObject::Destroy()
 	{
 	}
 
@@ -78,5 +84,19 @@ namespace KudoEngine
 
 			behaviour.get()->InternalRender();
 		}
+	}
+
+	void GameObject::InternalDestroy()
+	{
+		if (!_setToDestroy) return;
+
+		for (auto& behaviour : _components)
+		{
+			if (!behaviour.get()->IsEnabled()) continue;
+
+			behaviour.get()->InternalDestroy();
+		}
+
+		Engine::Instance().GetGameObjectManager().DestroyGameObject(*this);
 	}
 }
