@@ -36,7 +36,7 @@ namespace Game
 			// Dash
 			if (IsGamepadButtonPressed(_gamepadIdx, GAMEPAD_BUTTON_RIGHT_FACE_DOWN))
 			{
-				Print("[DEBUG] Dash pressed");
+				_playerMovement->Dash();
 			}
 
 			// Shoot
