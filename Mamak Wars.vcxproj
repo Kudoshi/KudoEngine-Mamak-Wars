@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -145,11 +146,13 @@
     <ClInclude Include="Collider.hpp" />
     <ClInclude Include="CollisionManager.hpp" />
     <ClInclude Include="Component.hpp" />
+    <ClInclude Include="Event.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Engine.hpp" />
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="GameObjectManager.hpp" />
     <ClInclude Include="LifecycleManager.hpp" />
+    <ClInclude Include="Player.hpp" />
     <ClInclude Include="PlayerInput.hpp" />
     <ClInclude Include="PlayerMovement.hpp" />
     <ClInclude Include="Print.hpp" />

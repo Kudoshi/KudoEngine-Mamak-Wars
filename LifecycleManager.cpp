@@ -14,7 +14,7 @@ namespace KudoEngine
             Start();
 
             Update();
-
+            EnginePhysics();
             Render();
         }
 

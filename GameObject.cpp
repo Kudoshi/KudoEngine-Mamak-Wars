@@ -5,7 +5,7 @@
 
 namespace KudoEngine
 {
-	GameObject::GameObject(int objectID) : _objectID(objectID)
+	GameObject::GameObject(int objectID, std::string objectName) : _objectID(objectID), _objectName(objectName)
 	{ 
 		_isActive = true;
 		AddComponent<Transform>();

@@ -3,6 +3,7 @@
 #include <map>
 #include <memory>
 #include "GameObject.hpp"
+#include <string>
 
 namespace KudoEngine
 {
@@ -12,7 +13,7 @@ namespace KudoEngine
 	{
 
 	public:
-		GameObject& CreateGameObject();
+		GameObject& CreateGameObject(std::string objectName);
 		void DestroyGameObject(GameObject& gameObject);
 	public:
 		std::map<int, std::unique_ptr<GameObject>>* GetGameObjects() {

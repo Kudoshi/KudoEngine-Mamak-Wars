@@ -8,11 +8,11 @@ namespace KudoEngine
 		return Engine::Instance().GetGameObjectManager();
 	}
 
-	GameObject& GameObjectManager::CreateGameObject()
+	GameObject& GameObjectManager::CreateGameObject(std::string objectName)
 	{
 		int id = static_cast<int>(_gameObjects.size()) + 1;
 
-		auto object = std::make_unique<GameObject>(id);
+		auto object = std::make_unique<GameObject>(id, objectName);
 
 		GameObject& ref = *object;
 

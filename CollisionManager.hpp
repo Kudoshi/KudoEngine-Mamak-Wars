@@ -19,6 +19,8 @@ namespace KudoEngine
 	public:
 		void ResetCollisionManager();
 		void InternalPhysicsLoop();
+		void RegisterCollider(Collider& collider);
+		void UnregisterCollider(Collider& collider);
 
 	private:
 		CollisionManager() = default;

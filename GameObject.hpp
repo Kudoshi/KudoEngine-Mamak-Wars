@@ -4,15 +4,14 @@
 #include <vector>
 #include "Component.hpp"
 #include "Transform.hpp"
-
+#include <string>
 
 namespace KudoEngine
 {
 	class GameObject
 	{
 	public:
-		GameObject(int objectID);
-
+		GameObject(int objectID, std::string objectName);
 
 	public: 
 		void InternalAwake();
@@ -23,7 +22,7 @@ namespace KudoEngine
 		bool IsActive() const { return _isActive; };
 		int GetObjectID() const { return _objectID; };
 		void DestroySelf() { _setToDestroy = true; };
-
+		std::string GetName() const { return _objectName; };
 
 		Transform& GetTransform() { return *static_cast<Transform*>(_components[0].get()); };
 		std::vector<std::unique_ptr<Component>>& GetComponents() { return _components; }
@@ -75,6 +74,7 @@ namespace KudoEngine
 
 	private:
 		int _objectID;
+		std::string _objectName;
 		std::vector<Component*> _awakeComponents;
 		std::vector<Component*> _startComponents;
 		std::vector<std::unique_ptr<Component>> _components;

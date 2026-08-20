@@ -1,8 +1,6 @@
 #include "raylib.h"
 #include "Engine.hpp"
-#include "TestObject.hpp"
-#include "SpriteRenderer.hpp"
-#include "PlayerInput.hpp"
+#include "Player.hpp"
 using namespace KudoEngine;
 
 namespace Game
@@ -15,18 +13,8 @@ namespace Game
 	{
 		Engine::Instance().GetGameObjectManager();
 
-		// First player
-		GameObject& testObj = Engine::Instance().GetGameObjectManager().CreateGameObject();
-		testObj.AddComponent<TestObject>();
-
-		SpriteRenderer& spriteRenderer = testObj.AddComponent<SpriteRenderer>();
-		//spriteRenderer.SetShape(Shape2D::Circle, BLUE);
-		spriteRenderer.SetSprite(LoadTexture("Resources/character_ring_indicator.png"));
-
-		testObj.GetTransform().SetPosition({ 500, 500 });
-		testObj.GetTransform().SetScale({ 0.5f, 0.5f });
-		testObj.AddComponent<PlayerInput>(0);
-		testObj.AddComponent<PlayerMovement>();
+		CreatePlayer(0, { 500, 500 });
+		CreatePlayer(1, { 1000, 1000 });
 
 
 		// Second Player
