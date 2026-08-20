@@ -73,6 +73,23 @@ namespace Game
 
 		transform.SetPosition(position);
 
+		// Cooldown
+
 		_cooldown -= deltaTime;
+
+		// Rotation
+
+		Vector2 direction = _movementInput;
+
+		if (Vector2Length(direction) > 0.0f)
+		{
+			direction = Vector2Normalize(direction);
+
+			float angle = atan2f(direction.y, direction.x);
+
+			float rotation = angle * RAD2DEG;
+
+			transform.SetRotation(rotation);
+		}
 	}
 }
