@@ -25,16 +25,19 @@ namespace KudoEngine
 		}
 		else if (_shapeSprite == Shape2D::Circle)
 		{
+			scale *= 100;
 			float radius = scale.x / 2.0f;
 			DrawCircle(position.x, position.y, radius, _spriteColor);
 		}
 		else if (_shapeSprite == Shape2D::Rectangle)
 		{
+			scale *= 100;
 			Rectangle rect = { position.x, position.y, scale.x, scale.y };
 			DrawRectanglePro(rect, position, rotation, _spriteColor);
 		}
 		else if (_shapeSprite == Shape2D::Triangle)
 		{
+			scale *= 100;
 			float halfWidth = scale.x / 2.0f;
 			float halfHeight = scale.y / 2.0f;
 
