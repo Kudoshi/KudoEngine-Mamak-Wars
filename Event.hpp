@@ -14,7 +14,8 @@ namespace KudoEngine
 
         size_t Subscribe(Callback callback)
         {
-            size_t id = _nextId++;
+            _nextId++;
+            size_t id = _nextId;
 
             _listeners.push_back({id, std::move(callback)});
 

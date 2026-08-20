@@ -2,6 +2,7 @@
 #include "Component.hpp"
 #include "PlayerMovement.hpp"
 #include "GameObject.hpp"
+#include "PlayerShoot.hpp"
 
 namespace Game
 {
@@ -18,5 +19,6 @@ namespace Game
 	private:
 		int _gamepadIdx;
 		PlayerMovement* _playerMovement;
+		PlayerShoot* _playerShoot;
 	};
 }

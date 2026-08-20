@@ -17,6 +17,7 @@ namespace KudoEngine
 			_shapeSprite = Shape2D::Sprite;
 			_texture2D = texture;
 		}
+		void SetColor(Color color) { _spriteColor = color; };
 
 		void Render() override;
 	private:

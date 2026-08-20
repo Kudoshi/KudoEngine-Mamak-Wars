@@ -5,24 +5,29 @@
 #include "SpriteRenderer.hpp"
 #include "PlayerInput.hpp"
 #include "Collider.hpp"
-using namespace KudoEngine;
-
+#include "PlayerShoot.hpp"
+#include "PlayerDie.hpp"
 namespace Game
 {
-	void inline CreatePlayer(int playerIdx, Vector2 spawnPosition)
+	using namespace KudoEngine;
+
+	void inline CreatePlayer(int playerIdx, Vector2 spawnPosition, Color playerColor)
 	{
 		// First player
-		GameObject& testObj = Engine::Instance().GetGameObjectManager().CreateGameObject("Player " + std::to_string(playerIdx));
-		testObj.AddComponent<TestObject>();
+		GameObject& playerObj = Engine::Instance().GetGameObjectManager().CreateGameObject("Player " + std::to_string(playerIdx));
+		playerObj.AddComponent<TestObject>();
 
-		SpriteRenderer& spriteRenderer = testObj.AddComponent<SpriteRenderer>();
+		SpriteRenderer& spriteRenderer = playerObj.AddComponent<SpriteRenderer>();
 		//spriteRenderer.SetShape(Shape2D::Circle, BLUE);
 		spriteRenderer.SetSprite(LoadTexture("Resources/character_ring_indicator.png"));
+		spriteRenderer.SetColor(playerColor);
 
-		testObj.GetTransform().SetPosition(spawnPosition);
-		testObj.GetTransform().SetScale({ 0.5f, 0.5f });
-		testObj.AddComponent<PlayerInput>(playerIdx);
-		testObj.AddComponent<PlayerMovement>();
-		testObj.AddComponent<Collider>(100, 100);
+		playerObj.GetTransform().SetPosition(spawnPosition);
+		playerObj.GetTransform().SetScale({ 0.3f, 0.3f });
+		playerObj.AddComponent<PlayerInput>(playerIdx);
+		playerObj.AddComponent<PlayerMovement>();
+		playerObj.AddComponent<Collider>(100, 100);
+		playerObj.AddComponent<PlayerShoot>();
+		playerObj.AddComponent<PlayerDie>(playerIdx);
 	}
 }

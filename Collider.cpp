@@ -9,8 +9,8 @@ namespace KudoEngine
 
 	void Collider::CollisionDetected(Collider& other)
 	{
-		Print("Detected! Colliding with " + other.GetGameObject().GetName());
-		OnCollisionEnter.Invoke(other);
+		//Print("Detected! Colliding with " + other.GetGameObject().GetName());
+		OnCollisionEnter.Invoke(other);	
 	}
 	void KudoEngine::Collider::Start()
 	{

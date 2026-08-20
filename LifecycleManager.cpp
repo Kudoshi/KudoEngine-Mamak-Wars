@@ -20,7 +20,7 @@ namespace KudoEngine
 
         // De-Initialization
         //--------------------------------------------------------------------------------------
-        //CloseWindow();        // Close window and OpenGL context
+        CloseWindow();        // Close window and OpenGL context
         //--------------------------------------------------------------------------------------
 
 	}

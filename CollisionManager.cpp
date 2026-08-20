@@ -24,6 +24,7 @@ namespace KudoEngine
 				if (CheckCollisionRecs(a->GetColliderRect(), b->GetColliderRect()))
 				{
 					a->CollisionDetected(*b);
+					b->CollisionDetected(*a);
 				}
 			}
 		}

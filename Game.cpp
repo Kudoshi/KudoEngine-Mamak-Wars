@@ -13,8 +13,8 @@ namespace Game
 	{
 		Engine::Instance().GetGameObjectManager();
 
-		CreatePlayer(0, { 500, 500 });
-		CreatePlayer(1, { 1000, 1000 });
+		CreatePlayer(0, { 500, 500 }, BLUE);
+		CreatePlayer(1, { 1000, 1000 }, GREEN);
 
 
 		// Second Player

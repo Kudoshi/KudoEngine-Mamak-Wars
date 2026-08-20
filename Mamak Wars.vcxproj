@@ -138,8 +138,11 @@
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="LifecycleManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayerDie.cpp" />
     <ClCompile Include="PlayerInput..cpp" />
     <ClCompile Include="PlayerMovement.cpp" />
+    <ClCompile Include="PlayerShoot.cpp" />
+    <ClCompile Include="Roticanai.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +156,7 @@
     <ClInclude Include="GameObjectManager.hpp" />
     <ClInclude Include="LifecycleManager.hpp" />
     <ClInclude Include="Player.hpp" />
+    <ClInclude Include="PlayerDie.hpp" />
     <ClInclude Include="PlayerInput.hpp" />
     <ClInclude Include="PlayerMovement.hpp" />
     <ClInclude Include="Print.hpp" />
@@ -160,6 +164,8 @@
     <ClInclude Include="SpriteRenderer.hpp" />
     <ClInclude Include="TestObject.hpp" />
     <ClInclude Include="Transform.hpp" />
+    <ClInclude Include="PlayerShoot.hpp" />
+    <ClInclude Include="RotiCanai.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

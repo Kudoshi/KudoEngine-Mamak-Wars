@@ -22,6 +22,7 @@ namespace KudoEngine
 		bool IsActive() const { return _isActive; };
 		int GetObjectID() const { return _objectID; };
 		void DestroySelf() { _setToDestroy = true; };
+		void SetActive(bool isActive) { _isActive = isActive; };
 		std::string GetName() const { return _objectName; };
 
 		Transform& GetTransform() { return *static_cast<Transform*>(_components[0].get()); };

@@ -1,7 +1,9 @@
 #include "PlayerInput.hpp"
 #include "raylib.h"
 #include "Print.hpp"
+#include "PlayerShoot.hpp"
 using namespace KudoEngine;
+
 
 namespace Game
 {
@@ -12,6 +14,7 @@ namespace Game
 	void PlayerInput::Awake()
 	{
 		_playerMovement = GetGameObject().GetComponent<PlayerMovement>();
+		_playerShoot = GetGameObject().GetComponent<PlayerShoot>();
 	}
 
 	void PlayerInput::Update()
@@ -42,8 +45,7 @@ namespace Game
 			// Shoot
 			if (IsGamepadButtonPressed(_gamepadIdx, GAMEPAD_BUTTON_RIGHT_FACE_LEFT))
 			{
-				Print("[DEBUG] Shoot pressed");
-
+				_playerShoot->Shoot();
 			}
 
 		}
