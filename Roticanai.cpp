@@ -37,7 +37,9 @@ namespace Game
 
 		if (otherID == _gameObjectIDShooter) return;
 		
-		other.GetGameObject().GetComponent<PlayerDie>()->Die();
+		PlayerDie* playerDie = other.GetGameObject().GetComponent<PlayerDie>();
+		if (playerDie != nullptr)
+			playerDie->Die();
 
 		GetGameObject().DestroySelf();
 

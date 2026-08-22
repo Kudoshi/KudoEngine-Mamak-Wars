@@ -1,6 +1,7 @@
 #include "raylib.h"
 #include "Engine.hpp"
 #include "Player.hpp"
+#include "ObstacleSpawning.hpp"
 using namespace KudoEngine;
 
 namespace Game
@@ -14,9 +15,9 @@ namespace Game
 		Engine::Instance().GetGameObjectManager();
 
 		CreatePlayer(0, { 500, 500 }, BLUE);
-		CreatePlayer(1, { 1000, 1000 }, GREEN);
+		CreatePlayer(1, { 1400, 500 }, GREEN);
 
-
+		//GenerateObstacle(20, 50, 150);
 		// Second Player
 
 		/*GameObject& testObj2 = Engine::Instance().GetGameObjectManager().CreateGameObject();

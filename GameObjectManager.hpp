@@ -23,6 +23,7 @@ namespace KudoEngine
 		};
 	private:
 		std::map<int, std::unique_ptr<GameObject>> _gameObjects;
+		int _gameObjectTotalSpawned;
 	};
 
 	GameObjectManager& G_GameObjectManager();

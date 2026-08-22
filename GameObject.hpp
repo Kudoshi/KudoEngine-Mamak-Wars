@@ -20,6 +20,7 @@ namespace KudoEngine
 		void InternalRender();
 		void InternalDestroy();
 		bool IsActive() const { return _isActive; };
+		bool IsFlagDestroy() const { return _setToDestroy; };
 		int GetObjectID() const { return _objectID; };
 		void DestroySelf() { _setToDestroy = true; };
 		void SetActive(bool isActive) { _isActive = isActive; };

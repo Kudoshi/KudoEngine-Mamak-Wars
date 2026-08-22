@@ -15,6 +15,7 @@ namespace KudoEngine
 
             Update();
             EnginePhysics();
+            Destroy();
             Render();
         }
 
@@ -90,9 +91,14 @@ namespace KudoEngine
 
         if (objects->empty()) return;
 
-        for (auto& obj : *objects)
+        for (auto it = objects->begin(); it != objects->end();)
         {
-            obj.second.get()->InternalDestroy();
+            auto next = std::next(it);
+
+            if (it->second->IsFlagDestroy())
+                it->second->InternalDestroy();
+
+            it = next;
         }
 
 

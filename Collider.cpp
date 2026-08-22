@@ -5,7 +5,7 @@
 
 namespace KudoEngine
 {
-	bool RENDER_COLLIDER_VISUALIZATION = true;
+	bool RENDER_COLLIDER_VISUALIZATION = false;
 
 	void Collider::CollisionDetected(Collider& other)
 	{

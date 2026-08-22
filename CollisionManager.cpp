@@ -35,7 +35,7 @@ namespace KudoEngine
 		_colliders.push_back(&collider);
 	}
 	void CollisionManager::UnregisterCollider(Collider& collider)
-	{
+ 	{
 		for (auto it = _colliders.begin(); it != _colliders.end(); ++it)
 		{
 			if (*it == &collider)

@@ -33,7 +33,7 @@ namespace KudoEngine
 		{
 			scale *= 100;
 			Rectangle rect = { position.x, position.y, scale.x, scale.y };
-			DrawRectanglePro(rect, position, rotation, _spriteColor);
+			DrawRectanglePro(rect, { scale.x / 2.0f, scale.y / 2.0f }, rotation, _spriteColor);
 		}
 		else if (_shapeSprite == Shape2D::Triangle)
 		{

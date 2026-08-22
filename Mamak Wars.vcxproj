@@ -155,6 +155,7 @@
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="GameObjectManager.hpp" />
     <ClInclude Include="LifecycleManager.hpp" />
+    <ClInclude Include="ObstacleSpawning.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="PlayerDie.hpp" />
     <ClInclude Include="PlayerInput.hpp" />

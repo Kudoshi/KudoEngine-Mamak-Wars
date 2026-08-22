@@ -10,20 +10,20 @@ namespace KudoEngine
 
 	GameObject& GameObjectManager::CreateGameObject(std::string objectName)
 	{
-		int id = static_cast<int>(_gameObjects.size()) + 1;
+		_gameObjectTotalSpawned++;
 
-		auto object = std::make_unique<GameObject>(id, objectName);
+		auto object = std::make_unique<GameObject>(_gameObjectTotalSpawned, objectName);
 
 		GameObject& ref = *object;
 
-		_gameObjects[id] = std::move(object);
+		_gameObjects[_gameObjectTotalSpawned] = std::move(object);
 
 		return ref;
 	}
 
 	void GameObjectManager::DestroyGameObject(GameObject& gameObject)
 	{
-		_gameObjects.erase(gameObject.GetObjectID());
+ 		_gameObjects.erase(gameObject.GetObjectID());
 	}
 
 
